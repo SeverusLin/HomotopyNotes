@@ -1,0 +1,152 @@
+\documentclass[Unicode,oneside]{book}
+\usepackage[paperwidth=18.5cm, paperheight=26cm, top=2.5cm, bottom=2.1cm, left=2cm, right=2cm]{geometry}  
+\usepackage{fontspec}
+\setmainfont{CMU Serif}
+\usepackage{xeCJK} %Chinese Japanese Korean
+\usepackage{amsmath,amsfonts,amssymb,mathtools}
+\usepackage{mathrsfs} %ornamental letters
+\usepackage{bm} %bold math symbols
+\usepackage{xcolor} %color extension
+\usepackage{tikz}
+\usepackage{tikz-cd} %commutative diagram
+\tikzcdset{
+	arrow style=tikz,
+	%diagrams={>={Straight Barb[scale=1.5]}}
+}
+% Creative Commons icon
+\usepackage[
+type={CC},
+modifier={by-nc-sa},
+version={4.0}
+]{doclicense}
+
+\usepackage{multicol}
+\usepackage{pdfpages} %insert pdf pages
+%\usepackage{cite} %cite from bib
+%\bibliographystyle{plain}
+\usepackage[numbib]{tocbibind}
+% make index and hyperreference
+\usepackage{makeidx}
+\usepackage{imakeidx}
+\makeindex[intoc]
+\usepackage[hyperindex]{hyperref} 
+\hypersetup{colorlinks=true,linkcolor=purple,filecolor=cyan,urlcolor=cyan,citecolor=red}
+\usepackage{mathbbol}
+\usepackage{ulem} %make \emph underline
+\usepackage{enumitem}
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt,label=(\roman*)}
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+
+
+%\renewcommand{\emptyset}{\ensuremath{\varnothing}}  
+\renewcommand{\thefootnote}{{\color{red}\roman{footnote}}}
+\renewcommand{\baselinestretch}{1.25}
+\usepackage[thmmarks,hyperref]{ntheorem} %theorem environment with qedsymbol
+\theorembodyfont{}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\theorembodyfont{}
+\newtheorem{lemma}[theorem]{Lemma}
+\theorembodyfont{}
+\newtheorem{proposition}[theorem]{Proposition}
+\theorembodyfont{}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{definition-theorem}[theorem]{Definition-Theorem}
+\newtheorem{definition-proposition}[theorem]{Definition-Proposition}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theorembodyfont{}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{convention}[theorem]{Convention}
+\newtheorem{exercise}[theorem]{Exercise}		% 穿插于文中的习题
+\qedsymbol{\ensuremath{\square}} %%在如无需证明的推论等定理类环境中使用 \qed 以显示证明结束符, 此处使用 \ensuremath{\square} 而不是 $\square$ 以便在以数学环境结束的证明中也可以正常使用.
+{   % 利用分组，格式设置只作用于证明环境  不出现证明结束符查看ntheorem的thmmarks参数加了没
+	\theoremstyle{nonumberplain}
+	\theoremsymbol{\ensuremath{\square}} %%\square 需要 amssymb 的支持
+	\newtheorem{proof}{证明}
+}
+
+% 算子
+\AtBeginDocument{%https://tex.stackexchange.com/a/117995
+  \let\dim\relax
+  \DeclareMathOperator{\dim}{dim}
+  \DeclareMathOperator{\codim}{codim}
+  %https://tex.stackexchange.com/questions/175251/how-to-redefine-a-command-using-declaremathoperator
+}
+% 实用工具宏
+\newcommand*{\lr}[3]{\left#1#3\right#2}
+\newcommand*{\powerset}[1]{2^{#1}}
+% 简写
+\newcommand*{\CC}{\symbb{C}}
+\newcommand*{\ZZ}{\symbb{Z}}
+\newcommand*{\NN}{\symbb{N}}
+
+\AtBeginDocument{%https://tex.stackexchange.com/a/117995
+  \DeclareMathOperator{\mspan}{span}
+  \DeclareMathOperator{\Rq}{Rq}
+  \DeclareMathOperator{\argmin}{argmin}
+  \DeclareMathOperator{\partition}{Par}
+  \DeclareMathOperator{\rel}{rel}
+}
+\newcommand*{\norm}[1]{\Vert #1 \Vert}
+
+\AtBeginEnvironment{quote}{\itshape}
+
+
+\usepackage{fbox}
+
+\usepackage[vcentermath]{youngtab}
+
+\usepackage{tikz}
+
+\usepackage{tikz-cd}
+
+% %每章制作bib
+% \usepackage[style=alphabetic]{biblatex}
+% \addbibresource{ref.bib}
+
+
+% %制作标题
+% \usepackage{titlesec}
+
+% \titleformat
+% {\chapter} % command
+% [block] % shape
+% {\bfseries\LARGE} % format
+% { \thechapter} % label
+% {0.1ex} % sep
+% {
+%     \rule{\textwidth}{1pt}
+%     \vspace{1ex}
+%     \centering
+% } % before-code
+% [
+% \vspace{-0.5ex}%
+% \rule{\textwidth}{0.3pt}
+% ] % after-code
+
+
+% \titleformat{\section}[display]
+% {\normalfont\bfseries}
+% {\thesection.}{0.5em}{}
+
+% \titlespacing{\section}{12pc}{1.5ex plus .1ex minus .2ex}{1pc}
+
+\allowdisplaybreaks
+
+\title{同伦论笔记}
+\author{\texttt{Lin Wangyang}}
+\date{\today}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	%\part{部名}
+	\include{chaps/chap1}
+
+
+
+ 
+\end{document}

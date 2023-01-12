@@ -1,0 +1,30 @@
+\chapter{同伦群}
+\section{预备}
+设$X$与$Y$是拓扑空间，连续函数$f:X\to Y$在后文中都称为{\bfseries 映射}. 设$X',X''$是$X$的子空间，$Y',Y''$是$Y$的子空间，如果映射$f:X\to Y$满足$f(X')\subset Y',f(X'')\subset Y''$，则记$f:(X,X',X'')\to(Y,Y',Y'')$. 记$I=[0,1]$.
+
+\begin{definition}\label{def:homotopy}
+    设$f,f':(X,X',X'')\to(Y,Y',Y'')$是两个映射. 如果存在映射$F:(X\times I,X'\times I,X''\times I)\to (Y,Y',Y'')$，使得
+    \begin{align*}
+        F(x,0)&=f(x),\\
+        F(x,1)&=f'(x),\forall x\in X
+    \end{align*}
+    则称$f,f'$相对于$(X',X''),(Y',Y'')$是同伦的，并记作
+    \[
+        f\simeq f':(X,X',X'')\to(Y,Y',Y'').
+    \]
+    简记$f\simeq f'$.
+\end{definition}
+
+\begin{remark}
+    当$X',X'',Y',Y''$都是空集的时候，就是通常我们说的（绝对）同伦，记为$f\simeq f':X\to Y$.
+
+    当$X''=X',Y''=Y'$时，记为$f\simeq f':(X,X')\to (Y,Y')$. 特别地，当$F(x,t)=f(x),\forall x\in X,t\in I$时，记$f\simeq f'\rel X'$.
+\end{remark}
+
+\begin{remark}
+    映射$f$与$f'$之间的同伦可以用直观的方式理解，即连接$f$和$f'$之间的连续形变. 对于$(x,t)\in X\times I$可以把$t$理解为时间，可以将$f_t(x)=F(x,t)$视为映射族$f_t:X\to Y$. 这种记号后面也经常使用. 在定义 \ref{def:homotopy} 中对于任意$t\in I$有$f_t(X')\subset Y',f_t(X'')\subset Y''$.
+\end{remark}
+
+\begin{example}
+    设  
+\end{example}
